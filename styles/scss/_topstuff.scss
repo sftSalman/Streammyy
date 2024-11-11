@@ -1,0 +1,74 @@
+@import url('../icons/fontawesome/css/all.min.css');
+
+@font-face {
+    font-family: nunito;
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+	font-family: $font-sans;
+	background-color: #eee;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: nunito, $font-sans;
+}
+
+::selection {
+    background-color: #ddd;
+    color: $primary-color;
+    // border: 1px solid $sec-color;
+}
+
+.modal-bg, .menu-nav-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    // z-index: 19;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-bg {
+    z-index: 100;
+}
+
+.menu-nav-bg {
+    z-index: 16;
+}
+
+.show-modal-bg {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.container {
+    background: white;
+    height: 100vh;
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    // grid-template-columns: 100%;
+}
+
+.mobile-header {
+    display: none;
+}

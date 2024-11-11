@@ -1,0 +1,27 @@
+{
+  "name": "sirimazone",
+  "version": "1.0.0",
+  "description": "Sirimazone is an online movie store.",
+  "main": "scripts/js/script.js",
+  "scripts": {
+    "build:sass": "sass --watch styles/scss/style.scss styles/css/style.css --no-source-map",
+    "build:js": "parcel watch -d ./scripts/prod -o app.js --no-hmr --no-autoinstall --no-cache --no-source-maps ./scripts/dev/script.js",
+    "php-server": "php -S localhost:4040",
+    "dev-scripts": "start npm run php-server && start npm run build:js && npm run build:sass",
+    "dev-scripts-no-php-server": "start npm run build:js && npm run build:sass"
+  },
+  "keywords": [
+    "movie",
+    "site",
+    "store",
+    "website",
+    "app",
+    "application",
+    "sirimazone",
+    "sirima",
+    "zone",
+    "film"
+  ],
+  "author": "Gideon Idoko <iamgideonidoko@gmail.com>",
+  "license": "MIT"
+}

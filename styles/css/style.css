@@ -1,0 +1,1313 @@
+@import url("../icons/fontawesome/css/all.min.css");
+.display-none {
+  display: none;
+}
+
+.alert-role-box {
+  background: #fed7d7;
+  border: 1px solid #fc8181;
+  color: #c53030;
+  padding: 0.5rem 0.7rem;
+  margin: 0.6rem 0.7rem;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url("../fonts/Nunito-Regular.ttf");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  background-color: #eee;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+
+::selection {
+  background-color: #ddd;
+  color: rgba(34, 37, 70, 0.7);
+}
+
+.modal-bg, .menu-nav-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-bg {
+  z-index: 100;
+}
+
+.menu-nav-bg {
+  z-index: 16;
+}
+
+.show-modal-bg {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.container {
+  background: white;
+  height: 100vh;
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.header {
+  background: white;
+  padding: 2.5rem 2rem 2.5rem 3rem;
+  overflow-y: scroll;
+  z-index: 20;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.header::-webkit-scrollbar {
+  display: none;
+}
+.header form {
+  background: #eee;
+  width: 100%;
+  border-radius: 1rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+.header form input[type=search] {
+  background: transparent;
+  outline: none;
+  border: 0px solid transparent;
+  height: 3rem;
+  width: 100%;
+}
+.header form button {
+  background: white;
+  outline: 0;
+  border: 0px solid transparent;
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  padding: 3px 6px 4px 8px;
+  font-weight: 500;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  color: #222546;
+}
+.header form button:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  color: #fc6917;
+}
+
+.header h2 {
+  text-align: center;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  color: #222546;
+}
+.header h2 span {
+  color: #fc6917;
+}
+
+.nav {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.nav ul li {
+  list-style: none;
+  margin: 0rem 3rem 1rem 1rem;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.nav ul li a.activate-feed, .nav ul li a.activate-home, .nav ul li a.activate-holly, .nav ul li a.activate-nolly, .nav ul li a.activate-bolly, .nav ul li a.activate-others {
+  color: #fc6917;
+}
+.nav ul li a.activate-feed i, .nav ul li a.activate-home i, .nav ul li a.activate-holly i, .nav ul li a.activate-nolly i, .nav ul li a.activate-bolly i, .nav ul li a.activate-others i {
+  visibility: visible;
+  color: #fc6917;
+}
+.nav ul li a:hover {
+  color: #fc6917;
+}
+.nav ul li a:hover i {
+  visibility: visible;
+  color: #fc6917;
+}
+.nav ul li a i {
+  margin-right: 1rem;
+  visibility: hidden;
+}
+.nav ul li a span {
+  width: 0rem;
+  margin-right: 0.8rem;
+}
+
+.random-movie-container {
+  background: #eee;
+  border-radius: 1.5rem;
+  padding: 1rem 2rem 1.5rem;
+  margin-top: 1rem;
+}
+.random-movie-container h3 {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  text-align: center;
+  color: #222546;
+}
+.random-movie-container div {
+  background: white;
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.random-movie-container div .no-content {
+  text-align: center;
+  padding: 1rem 0;
+}
+.random-movie-container div ul {
+  text-align: center;
+  padding: 0.1rem 0;
+  font-size: 1.4rem;
+}
+.random-movie-container div ul li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+.random-movie-container div ul li a {
+  color: rgba(0, 0, 0, 0.7);
+}
+.random-movie-container div ul li a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.login-icon-wrap {
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.login-icon-wrap div:nth-child(1) {
+  color: #fc6917;
+  margin-bottom: 0.5rem;
+}
+.login-icon-wrap div:nth-child(1) span {
+  background: #eee;
+  padding: 0.5rem 0.8rem;
+  border-radius: 1rem;
+}
+.login-icon-wrap div:nth-child(2) {
+  font-size: 1.4rem;
+}
+
+.disclaimer p {
+  opacity: 0.9;
+}
+
+.main {
+  border: 0rem solid #eee;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  overflow-x: hidden;
+  margin: 1rem 1.5rem;
+  background: #eee;
+  border-left-width: 1rem;
+  border-right-width: 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+.main-display {
+  color: black;
+  background: white;
+  min-height: calc(100vh - 6rem);
+  width: 95%;
+  margin: 2rem auto;
+  border-top-right-radius: 3.5rem;
+  border-bottom-right-radius: 3.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.admin-access-auth-container {
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.admin-access-auth-container::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-access-auth-wrap {
+  background: #222546;
+  color: white;
+  width: 40rem;
+  max-width: 100%;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.admin-access-auth-wrap h1 {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  text-align: center;
+}
+
+.signin-form {
+  text-align: center;
+}
+.signin-form h3 {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  color: #fc6917;
+}
+.signin-form .other-opt {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  padding-bottom: 2rem;
+}
+.signin-form .other-opt span {
+  opacity: 0.8;
+}
+.signin-form .other-opt span:hover {
+  opacity: 1;
+}
+
+.signup-form {
+  text-align: center;
+}
+.signup-form h3 {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  color: #fc6917;
+}
+.signup-form .other-opt {
+  padding-bottom: 2rem;
+}
+.signup-form .other-opt span {
+  opacity: 0.8;
+}
+.signup-form .other-opt span:hover {
+  opacity: 1;
+}
+
+.input-fc label {
+  display: block;
+}
+.input-fc input {
+  width: 90%;
+  margin: 1rem 0;
+  height: 4rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  outline: 0;
+  border: 0;
+  color: #222546;
+}
+
+.open-signin, .open-signup {
+  cursor: pointer;
+}
+
+.submit-fc {
+  margin: 1rem 0 0.3rem;
+}
+.submit-fc input[type=submit] {
+  background: #fc6917;
+  border: 0;
+  width: 90%;
+  height: 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  padding-bottom: 0.2rem;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+.submit-fc input[type=submit]:hover {
+  opacity: 0.9;
+}
+
+.profile-header {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 1rem 2rem 0rem;
+  text-align: center;
+}
+.profile-header h2 {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-size: 2.8rem;
+}
+
+.user-img {
+  z-index: 3;
+  text-align: center;
+}
+.user-img i {
+  font-size: 10rem;
+  background-color: #eee;
+  color: #fc6917;
+  padding: 1rem 2rem 2rem;
+  border-radius: 10rem;
+  overflow: hidden;
+  border: 3px solid white;
+}
+
+.profile-body {
+  padding: 0 2rem;
+  margin: 2.5rem 0;
+}
+
+.other-admins {
+  margin-top: 0.5rem;
+}
+
+.admin-action-options {
+  text-align: center;
+}
+.admin-action-options ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0 0px 15px -3px rgba(0, 0, 0, 0.1), 0 0px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.admin-action-options ul li {
+  list-style: none;
+  margin: 2rem 0;
+}
+.admin-action-options ul li a {
+  text-decoration: none;
+  color: #222546;
+  font-weight: 600;
+}
+.admin-action-options ul li a i {
+  font-size: 4rem;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 10rem;
+  margin-bottom: 1rem;
+  width: 6.5rem;
+  height: 6.5rem;
+}
+.admin-action-options ul li a:hover {
+  color: #fc6917;
+}
+.admin-action-options ul li a:hover i {
+  -webkit-animation-name: swing;
+  animation-name: swing;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+.file-upload-progress {
+  height: 1.5rem;
+  background-color: rgba(252, 105, 23, 0.3);
+  border-radius: 10rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.file-upload-progress-bar {
+  background-color: #222546;
+  height: 1.5rem;
+  transition: width 0.6s ease;
+  border-radius: 10rem;
+  width: 0;
+}
+
+#file-upload-status {
+  margin-top: 1rem;
+  font-size: 2rem;
+  height: 2.8rem;
+}
+
+.file-upload-div {
+  margin: 4rem 4rem 2rem;
+  text-align: center;
+  border: 2px dashed #222546;
+  padding: 4rem 3rem 3.5rem;
+}
+
+.file-input-fc {
+  background-color: #eee;
+  display: flex;
+  border-radius: 10rem;
+}
+.file-input-fc .file-input-wrap {
+  position: relative;
+  overflow-x: hidden;
+  display: inline-block;
+}
+.file-input-fc .file-input-wrap input[type=file] {
+  position: relative;
+  top: 0;
+  left: -7.2rem;
+  padding: 0.75rem 0;
+  font-weight: 600;
+  color: #fc6917;
+}
+.file-input-fc .file-input-wrap input[type=file] button {
+  background: green;
+}
+.file-input-fc label {
+  display: inline-block;
+  background: rgba(34, 37, 70, 0.7);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10rem;
+  width: 10rem;
+  white-space: nowrap;
+}
+.file-input-fc label:hover {
+  background-color: #222546;
+}
+
+.file-submit-fc {
+  margin: 4rem 2rem;
+}
+.file-submit-fc button {
+  outline: none;
+  background-color: #222546;
+  padding: 0.75rem 1.5rem;
+  font-size: 2.1rem;
+  border: 0 solid transparent;
+  color: white;
+  border-radius: 1rem;
+}
+.file-submit-fc button:hover {
+  background-color: rgba(34, 37, 70, 0.7);
+}
+
+.page-title span {
+  font-size: 1.8rem;
+  margin-left: -1rem;
+}
+.page-title span a {
+  color: #222546;
+}
+.page-title span a:hover {
+  color: #fc6917;
+}
+.page-title + p {
+  margin-top: 0.6rem;
+}
+
+.upload-guidelines {
+  padding-top: 1rem;
+}
+.upload-guidelines h4 {
+  font-size: 1.8rem;
+}
+.upload-guidelines ol {
+  margin-left: 3rem;
+}
+.upload-guidelines ol li {
+  margin: 0.3rem 0;
+}
+
+.all-posts, .pinned-posts, .category-posts, .search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.all-posts .single-post, .pinned-posts .single-post, .category-posts .single-post, .search-results .single-post {
+  margin: 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.all-posts .single-post:hover, .pinned-posts .single-post:hover, .category-posts .single-post:hover, .search-results .single-post:hover {
+  background: rgba(252, 105, 23, 0.3);
+}
+.all-posts .single-post:hover .cover-image-wrap a img, .pinned-posts .single-post:hover .cover-image-wrap a img, .category-posts .single-post:hover .cover-image-wrap a img, .search-results .single-post:hover .cover-image-wrap a img {
+  transform: scale(1);
+}
+.all-posts .single-post .cover-image-wrap, .pinned-posts .single-post .cover-image-wrap, .category-posts .single-post .cover-image-wrap, .search-results .single-post .cover-image-wrap {
+  margin-bottom: 1rem;
+}
+.all-posts .single-post .cover-image-wrap a img, .pinned-posts .single-post .cover-image-wrap a img, .category-posts .single-post .cover-image-wrap a img, .search-results .single-post .cover-image-wrap a img {
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.all-posts .single-post .brief-details, .pinned-posts .single-post .brief-details, .category-posts .single-post .brief-details, .search-results .single-post .brief-details {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.all-posts .single-post .brief-details h4, .pinned-posts .single-post .brief-details h4, .category-posts .single-post .brief-details h4, .search-results .single-post .brief-details h4 {
+  font-weight: 550;
+}
+.all-posts .single-post .brief-details h4 a, .pinned-posts .single-post .brief-details h4 a, .category-posts .single-post .brief-details h4 a, .search-results .single-post .brief-details h4 a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+}
+.all-posts .single-post .brief-details p, .pinned-posts .single-post .brief-details p, .category-posts .single-post .brief-details p, .search-results .single-post .brief-details p {
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+.all-posts .single-post .brief-details p a, .pinned-posts .single-post .brief-details p a, .category-posts .single-post .brief-details p a, .search-results .single-post .brief-details p a {
+  color: #000;
+}
+.all-posts .single-post .brief-details p a:hover, .pinned-posts .single-post .brief-details p a:hover, .category-posts .single-post .brief-details p a:hover, .search-results .single-post .brief-details p a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.all-pinned-posts {
+  margin-bottom: 3rem;
+}
+.all-pinned-posts h3 {
+  color: #222546;
+}
+
+.pinned-posts {
+  justify-content: flex-start;
+}
+
+.all-contents-post-header, .all-pinned-posts-header, .category-header {
+  color: #222546;
+  margin-bottom: 1rem;
+}
+
+.search-page-header {
+  color: #222546;
+}
+.search-page-header + p {
+  opacity: 0.8;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.pagination-wrapper {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.pagination-wrapper div {
+  display: inline-block;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.pagination-wrapper div a {
+  text-decoration: none;
+  color: #222546;
+  margin: 0 0.3rem;
+}
+.pagination-wrapper div a:hover {
+  color: #fc6917;
+}
+.pagination-wrapper div span {
+  margin: 0 1rem;
+}
+.pagination-wrapper div .page-num-info, .pagination-wrapper div .last-page-num {
+  font-size: 1.4rem;
+  color: #222546;
+}
+.pagination-wrapper div .not-allowed-page-num {
+  opacity: 0.5;
+}
+.pagination-wrapper div .active-pag-no {
+  border-radius: 10rem;
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.5rem;
+  border: 1px solid #fc6917;
+  padding-bottom: 1rem;
+}
+
+.content-title {
+  color: #222546;
+}
+.content-title + p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+.content-title + p a {
+  color: #000;
+}
+.content-title + p a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.single-pg-cover-wrap {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.single-pg-cover-wrap img {
+  max-width: 100%;
+}
+
+.single-pg-casts {
+  margin: 1.5rem 0;
+}
+
+.content-file-info {
+  margin: 1.5rem 0;
+}
+.content-file-info ul {
+  background: rgba(34, 37, 70, 0.1);
+  margin: 1.2rem 0 0 1.5rem;
+  border-left: 0.5rem solid #222546;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+.content-file-info ul li {
+  list-style: none;
+  word-break: break-all;
+  margin: 0.4rem 0;
+}
+
+.content-file-download-link-wrap {
+  margin: 1.5rem 0;
+}
+.content-file-download-link-wrap p {
+  margin: 2rem 0;
+}
+.content-file-download-link-wrap p a {
+  text-decoration: none;
+  background: rgba(252, 105, 23, 0.9);
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+}
+.content-file-download-link-wrap p a:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.other-download-link-wrap {
+  margin: 1.5rem 0;
+}
+.other-download-link-wrap p {
+  margin: 1rem 0;
+}
+.other-download-link-wrap p a {
+  color: #0000be;
+}
+.other-download-link-wrap p a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fc6917;
+}
+
+.comment-count-info {
+  margin: 2rem 0 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+.comment-count-info span {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+.comment-count-info .focus-comment-btn {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.all-comments {
+  margin: 2.5rem 0 1rem;
+}
+.all-comments .single-comment {
+  margin: 1rem 0;
+  display: flex;
+}
+.all-comments .single-comment div:nth-child(1) {
+  width: 4rem;
+}
+.all-comments .single-comment div:nth-child(1) span {
+  display: inline-block;
+  background: red;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;
+  background: rgba(34, 37, 70, 0.8);
+  color: #fc6917;
+}
+.all-comments .single-comment div:nth-child(2) {
+  width: auto;
+  max-width: 100%;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(1) {
+  width: auto;
+  background: #eee;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-left: 0.3rem;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(1) p:nth-child(1) {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-size: 1.5rem;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(1) p:nth-child(2) {
+  font-size: 1.4rem;
+}
+.all-comments .single-comment div:nth-child(2) div:nth-child(2) {
+  font-size: 1.35rem;
+  padding-left: 0.5rem;
+}
+
+.comment-section .comment-div {
+  margin: 1rem 0;
+}
+.comment-section .comment-div form div label {
+  display: block;
+  margin: 0.5rem 0 0.4rem;
+}
+.comment-section .comment-div form div input[type=text] {
+  width: 40rem;
+  max-width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #222546;
+  padding: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+.comment-section .comment-div form div input[type=text]:focus {
+  border: 1px solid #fc6917;
+}
+.comment-section .comment-div form div textarea {
+  width: 40rem;
+  resize: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  max-width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #222546;
+  padding: 0.5rem;
+}
+.comment-section .comment-div form div button {
+  margin-top: 1rem;
+  background: rgba(34, 37, 70, 0.8);
+  border: none;
+  color: white;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.comment-section .comment-div form div button:hover {
+  background: #222546;
+}
+
+.content-post-div form div, .edit-post-form-div form div {
+  margin: 2rem 0;
+}
+.content-post-div form div label, .edit-post-form-div form div label {
+  display: block;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.content-post-div form div p, .edit-post-form-div form div p {
+  font-size: 1.35rem;
+  opacity: 0.8;
+  margin: 0.5rem 0;
+}
+.content-post-div form div p a:hover, .edit-post-form-div form div p a:hover {
+  text-decoration: none;
+  color: #222546;
+  border-bottom: 1px solid #fc6917;
+}
+.content-post-div form div input, .edit-post-form-div form div input {
+  padding: 0.5rem;
+  width: 50rem;
+  max-width: 100%;
+}
+.content-post-div form div select, .edit-post-form-div form div select {
+  padding: 0.5rem;
+  height: 3rem;
+  width: 50rem;
+  border-radius: 0.6rem;
+  max-width: 100%;
+}
+.content-post-div form div select option, .edit-post-form-div form div select option {
+  padding: 0.5rem;
+  height: 3rem;
+  word-break: break-all;
+  word-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.content-post-div form div select option:hover, .edit-post-form-div form div select option:hover {
+  background: #fc6917;
+}
+.content-post-div form div #content-external-file, .edit-post-form-div form div #content-external-file {
+  font-family: monospace;
+}
+.content-post-div form div textarea, .edit-post-form-div form div textarea {
+  resize: none;
+  width: 50rem;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  max-width: 100%;
+}
+.content-post-div form div button, .edit-post-form-div form div button {
+  padding: 0.6rem 1rem;
+  background: #222546;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.content-post-div form div button:hover, .edit-post-form-div form div button:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #fc6917;
+}
+
+.select-edit-post-form-div {
+  margin: 3rem 0;
+}
+.select-edit-post-form-div select {
+  height: 3rem;
+  width: 50rem;
+  max-width: 100%;
+  border-radius: 0.6rem;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(1) {
+  background: rgba(252, 105, 23, 0.6);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(1):hover {
+  color: white;
+  background: #fc6917;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(2) {
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.select-edit-post-form-div .select-edit-post-btn-wrap button:nth-child(2):hover {
+  color: white;
+  background: red;
+}
+
+.file-delete-div form label {
+  display: block;
+  font-size: 1.5rem;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+.file-delete-div form select {
+  padding: 0.5rem;
+  height: 3rem;
+  width: 50rem;
+  border-radius: 0.6rem;
+  max-width: 100%;
+}
+.file-delete-div form select option {
+  padding: 0.5rem;
+  height: 3rem;
+  word-break: break-all;
+  word-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.file-delete-div form select option:hover {
+  background: #fc6917;
+}
+.file-delete-div form div {
+  padding: 1rem 0;
+}
+.file-delete-div form div button {
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.file-delete-div form div button:hover {
+  color: white;
+  background: red;
+}
+
+.all-uploads {
+  margin: 3rem 0;
+}
+.all-uploads select {
+  padding: 0.5rem;
+  height: 3rem;
+  border-radius: 0.6rem;
+  max-width: 100%;
+}
+.all-uploads select option {
+  padding: 0.5rem;
+  height: 3rem;
+  word-break: break-all;
+  word-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.all-uploads select option:hover {
+  background: #fc6917;
+}
+
+.select-comment-post-form-div {
+  margin: 3rem 0 1rem;
+}
+.select-comment-post-form-div form select {
+  padding: 0.5rem;
+  height: 3rem;
+  width: 50rem;
+  border-radius: 0.6rem;
+  max-width: 100%;
+}
+.select-comment-post-form-div form select option {
+  padding: 0.5rem;
+  height: 3rem;
+  word-break: break-all;
+  word-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.select-comment-post-form-div form select option:hover {
+  background: #fc6917;
+}
+.select-comment-post-form-div form div {
+  padding: 1rem 0;
+}
+.select-comment-post-form-div form div button {
+  background: rgba(252, 105, 23, 0.6);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.select-comment-post-form-div form div button:hover {
+  color: white;
+  background: #fc6917;
+}
+
+.delete-post-comment-div {
+  overflow-x: scroll;
+}
+.delete-post-comment-div p {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.delete-post-comment-div table {
+  border-collapse: collapse;
+  border: 2px solid #222546;
+  width: 70rem;
+}
+.delete-post-comment-div table thead {
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  background: #222546;
+  color: white;
+}
+.delete-post-comment-div table thead th {
+  padding: 1rem 0.5rem;
+  text-align: left;
+}
+.delete-post-comment-div table tbody tr:nth-child(even) {
+  background: rgba(34, 37, 70, 0.2);
+}
+.delete-post-comment-div table tbody tr:nth-child(odd) {
+  background: rgba(34, 37, 70, 0.1);
+}
+.delete-post-comment-div table tbody tr {
+  font-size: 1.5rem;
+}
+.delete-post-comment-div table tbody tr td {
+  padding: 1rem 0.5rem;
+  border-left: 2px solid #222546;
+}
+.delete-post-comment-div table tbody tr td button {
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.delete-post-comment-div table tbody tr td button:hover {
+  color: white;
+  background: red;
+}
+
+.create-access-id-div {
+  margin: 2rem 0;
+}
+.create-access-id-div form div {
+  margin: 1rem 0;
+}
+.create-access-id-div form div label {
+  display: block;
+  font-family: nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-weight: 600;
+}
+.create-access-id-div form div input {
+  width: 50rem;
+  max-width: 100%;
+  padding: 0.5rem;
+}
+.create-access-id-div form div button {
+  padding: 0.6rem 1rem;
+  background: #222546;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.create-access-id-div form div button:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #fc6917;
+}
+
+.available-access-id form {
+  margin-top: 1rem;
+}
+.available-access-id form button {
+  background: rgba(255, 0, 0, 0.7);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.available-access-id form button:hover {
+  color: white;
+  background: red;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    padding: 2.5rem 0.3rem 2.5rem 0.7rem;
+  }
+
+  .random-movie-container {
+    padding: 1rem;
+  }
+
+  .main-display {
+    width: 97%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    grid-template-columns: 100%;
+  }
+
+  .open-mobile-nav {
+    transform: translateX(0%) !important;
+  }
+
+  .header {
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    width: 35rem;
+    max-width: 100%;
+    padding: 2.5rem 1rem;
+  }
+
+  .mobile-header {
+    display: block !important;
+    position: relative;
+    padding: 0 2.4rem;
+  }
+  .mobile-header h2 {
+    color: #222546;
+  }
+  .mobile-header h2 span {
+    color: #fc6917;
+  }
+  .mobile-header-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    align-items: center;
+  }
+  .mobile-header-wrap h2 {
+    display: inline-block;
+  }
+  .mobile-header-wrap .menu-btn {
+    display: inline-block;
+    border: none;
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    outline: 0;
+    background: white;
+    cursor: pointer;
+    z-index: 20;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 10rem;
+    color: #222546;
+  }
+
+  .main {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    margin: 1rem;
+  }
+  .main-display {
+    border-top-left-radius: 3.5rem;
+    border-bottom-left-radius: 3.5rem;
+    width: 98%;
+  }
+
+  .admin-action-options ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .file-upload-div {
+    padding: 2rem;
+    margin: 2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .single-post {
+    width: 150px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 200px !important;
+  }
+}
+@media screen and (max-width: 420px) {
+  .single-post {
+    width: 130px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 170px !important;
+  }
+
+  .admin-action-options ul li a {
+    font-size: 1.5rem;
+  }
+  .admin-action-options ul li a i {
+    font-size: 3rem;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .single-post {
+    width: 110px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 150px !important;
+  }
+
+  .admin-action-options ul {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 336px) {
+  .single-post {
+    width: 170px !important;
+  }
+
+  .cover-image-wrap a img {
+    height: 200px !important;
+  }
+
+  .pinned-posts {
+    justify-content: center;
+  }
+}
