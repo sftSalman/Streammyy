@@ -14,7 +14,5 @@
 - **Search & Discovery**: Advanced search to help users find content quickly.
 - **Content Management for Creators**: Options to upload, edit, publish/unpublish, pin, or delete videos.
 - **Admin Control & Moderation**: Administrative tools to manage users and moderate content.
-- **Responsive Design**: Optimized for high performance on desktop, tablet, and mobile devices.
-
-![StreamMyy search page view](sshots/searchpage-streammyy.png)
+- **Responsive Design**: Optimized for high performance on desktop, tablet, and mobile device
 
